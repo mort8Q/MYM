@@ -1,0 +1,19 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+ <% if @user.is_provider %>
+        <div class="row ">
+            <div class=" card col s12 m10 #e0f7fa cyan lighten-5 ">
+                <div class="card-content">
+                <span class="card-title tit-fon"><%= @user.name %></span>
+                <p class="det">Email: <%= @user.email %> </p>
+                <%# <p class="det">Location:  <%= @user.location %> </p> 
+            </div>
+            <% if user_signed_in? && current_user.is_provider %>
+            <div class="card-action cli"> 
+        
+                <%# <%= link_to 'New Service', new_service_path %> 
+            </div> 
+            <%end %>
+        </div>
+    </div>
+<%end %>
