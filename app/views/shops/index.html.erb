@@ -1,2 +1,16 @@
-<h1>Shops#index</h1>
-<p>Find me in app/views/shops/index.html.erb</p>
+<h1>Shops</h1>
+    <div class="container">
+        <div class="card-columns">
+            <% @shops.each do |item| %>
+                <div class="card " style="width: 18rem;height: 22rem;"">
+                    <img class="pic" src="<%= item.image %>" alt="">
+                        <div class="card-body">
+                            <p class="card-title"><%= item.name %></p>
+                                <div class="link">
+                                <%= link_to 'View Details>>', shop_path(item) %>
+                                </div>
+                        </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
