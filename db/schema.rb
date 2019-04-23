@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190421085548) do
+ActiveRecord::Schema.define(version: 20190423062214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "connected_devices", force: :cascade do |t|
+    t.integer "acceleration_id"
+    t.integer "trip_id_a"
+    t.integer "x_value_a"
+    t.integer "y_value_a"
+    t.integer "z_value_a"
+    t.datetime "timestamp_a"
+    t.integer "gyroscope_id"
+    t.integer "x_value_g"
+    t.integer "y_value_g"
+    t.integer "z_value_g"
+    t.integer "obdData_id"
+    t.string "obdPid"
+    t.integer "data"
+    t.integer "pos_id"
+    t.string "latitude"
+    t.integer "longitude"
+    t.decimal "altitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "service_providers", force: :cascade do |t|
     t.string "first_name"
@@ -32,6 +54,15 @@ ActiveRecord::Schema.define(version: 20190421085548) do
     t.string "show"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "troubleshooters", force: :cascade do |t|
+    t.string "issue_name"
+    t.string "issue_description"
+    t.string "fix_steps", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "fix_steps_titles", default: [], array: true
   end
 
 end
