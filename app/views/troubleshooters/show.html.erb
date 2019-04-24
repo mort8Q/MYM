@@ -1,1 +1,15 @@
+<div class="container">
+  <h3><%= @troubleshooter.issue_name %></h3>
+  <div class="list-group">
+    <% @troubleshooter.fix_steps_titles.each_with_index do |fix_title, i| %>
+      <a href="#" class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1"><%= fix_title %></h5>
+          <small>step <%= i %></small>
+        </div>
+        <p class="mb-1"><%= @troubleshooter.fix_steps[0] %></p>
+      </a>
+    <% end %>
+  </div>
+</div>
 

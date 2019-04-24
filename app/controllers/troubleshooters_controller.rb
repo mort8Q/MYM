@@ -1,21 +1,12 @@
 class TroubleshootersController < ApplicationController
   def index
-    # if params[:search].blank?
-    #   redirect_to(root_path, alert: "Empty field!")
-    # else
-    #   @parameter = params[:search].downcase  
-    #   @results = Troubleshooter.all.where("lower(name) LIKE :search", search: @parameter)  
-    # end
-
-
-
-    # @troubleshooters = Troubleshooter.all
   end
 
   def new
   end
 
   def show
+    @troubleshooter = Troubleshooter.find(params[:id])
   end
 
   def edit

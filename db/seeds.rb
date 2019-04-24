@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Troubleshooter.destroy_all
+Car.destroy_all
 
+Car.create(user_id: 1, car_type: "Sports", car_brand: "Ferrari", car_model: "FXXK", car_year: 2017, car_odo: 11900)
 Troubleshooter.create(
     issue_name: "battery", 
     issue_description: "battery dead",

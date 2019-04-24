@@ -10,31 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190423062214) do
+ActiveRecord::Schema.define(version: 20190423084114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "cars", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "car_type"
+    t.string "car_brand"
+    t.string "car_model"
+    t.integer "car_year"
+    t.integer "car_odo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "connected_devices", force: :cascade do |t|
     t.integer "acceleration_id"
     t.integer "trip_id_a"
-    t.integer "x_value_a"
-    t.integer "y_value_a"
-    t.integer "z_value_a"
+    t.decimal "x_value_a"
+    t.decimal "y_value_a"
+    t.decimal "z_value_a"
     t.datetime "timestamp_a"
     t.integer "gyroscope_id"
-    t.integer "x_value_g"
-    t.integer "y_value_g"
-    t.integer "z_value_g"
+    t.decimal "x_value_g"
+    t.decimal "y_value_g"
+    t.decimal "z_value_g"
     t.integer "obdData_id"
     t.string "obdPid"
     t.integer "data"
     t.integer "pos_id"
     t.string "latitude"
-    t.integer "longitude"
+    t.string "longitude"
     t.decimal "altitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "car_id"
+    t.integer "user_id"
   end
 
   create_table "service_providers", force: :cascade do |t|

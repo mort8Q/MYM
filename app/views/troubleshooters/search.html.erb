@@ -1,6 +1,16 @@
-<h1>search</h1>
-<% @result.each do |r| %>
-  <li>
-    <%= r %>
-  </li>
-<% end %>
+<div class="container">
+  <h1>Troubleshoot</h1>
+  <% @result.each do |troubleshooter| %>
+    <div class="card">
+      <div class="card-header">
+        Advanced Troubleshooter
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><i>Issue: </i><%= troubleshooter.issue_name %></h5>
+        <p class="card-text"><i>Description: </i><%= troubleshooter.issue_description %>.</p>
+        <%= link_to 'Start Troubleshooting', troubleshooter_path(troubleshooter), :class => 'btn btn-primary'  %>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
