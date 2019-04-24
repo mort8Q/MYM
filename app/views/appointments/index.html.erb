@@ -1,24 +1,51 @@
-<h1>All Appointments</h1>
-<table>
-<tr>
-<th>Service Name</th>
-<th>Date</th>
-<th>Time</th>
-<th>Location</th>
+<body class="bg-light">
+<div class="container">
+<div class="py-5 text-center">
+ <img class="d-block mx-auto mb-4" src="https://image.flaticon.com/icons/svg/1643/1643625.svg" alt=""
+        width="72" height="72">
+      <h2>All Appointments</h2>
+</div>
 
+
+<table class="table">
+  <thead class="thead-dark">
+ 
+<tr>
+<th scope=“col”>Service Name</th>
+<th scope=“col”>Date</th>
+<th scope=“col”>Time</th>
+<th scope=“col”>Location</th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
+</thead>
 <% @appointments.each do |appointment| %>
 <tr>
-<td><%= appointment.service.name%></td>
-<td><%= appointment.date %></td>
-<td><%= appointment.time%></td>
-<td><%= appointment.location%></td>
+<td scope="col"><%= appointment.service.name%></td>
+<td scope="col"><%= appointment.date %></td>
+<td scope="col"><%= appointment.time.to_s.split(" ")[1] %></td>
+<td scope="col"><%= appointment.location%></td>
 
-<td> <%= link_to "Show", appointment %></td>
-<td><%= link_to "Edit", edit_appointment_path(appointment) %></td>
-<td><%= link_to "Delete", appointment, method: :delete, data: {confirm: "Are you sure?"} %></td>
+<td> <%= link_to "Show", appointment, class:"btn btn-outline-warning" %></td>
+<td><%= link_to "Edit", edit_appointment_path(appointment), class:"btn btn-outline-warning" %></td>
+<td><%= link_to "Delete", appointment, method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-outline-warning" %></td>
 </tr>
 <% end %>
 </table>
 
-<%= link_to "New Appointment", new_appointment_path %>
+
+<%= link_to "New Appointment", new_appointment_path, class:"btn btn-outline-warning"  %>
+</div>
+</div>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2018-2019 MPM</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+</body>
