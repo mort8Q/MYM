@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-center align-items-center container-fluid" style="height: 91.5vh; background-color: #dbdde0">
+  <div class="row">
+    <!-- <form class="form-inline">-->
+    <%#= form_tag '/serach', :method => "get", id: "search-form" do %>
+      <%= form_tag search_path, :method => "get", id: "search-form", class: "form-inline" do %>
+        <%= text_field_tag :term, params[:term], placeholder: "Troubleshoot Issues", class: 'form-control-lg inputlg mb-2 mr-sm-2' %>
+        <span class="input-group-btn">
+          <%= submit_tag "Search", class: 'btn-lg btn-outline-success mb-2', name: "search_troubleshooters" %>
+        </span>
+      <% end %>
+      <!-- </form> -->
+    </div>
+  </div>
