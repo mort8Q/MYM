@@ -1,0 +1,24 @@
+<h1>All Appointments</h1>
+<table>
+<tr>
+<th>Service Name</th>
+<th>Date</th>
+<th>Time</th>
+<th>Location</th>
+
+</tr>
+<% @appointments.each do |appointment| %>
+<tr>
+<td><%= appointment.service.name%></td>
+<td><%= appointment.date %></td>
+<td><%= appointment.time%></td>
+<td><%= appointment.location%></td>
+
+<td> <%= link_to "Show", appointment %></td>
+<td><%= link_to "Edit", edit_appointment_path(appointment) %></td>
+<td><%= link_to "Delete", appointment, method: :delete, data: {confirm: "Are you sure?"} %></td>
+</tr>
+<% end %>
+</table>
+
+<%= link_to "New Appointment", new_appointment_path %>

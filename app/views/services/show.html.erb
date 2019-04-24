@@ -1,0 +1,9 @@
+<h1><%= @service.name %></h1>
+
+<div class="card" style="width: 30rem;">
+  <img class="card-img-top" src="<%= @service.image %>" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text"><%= @service.description %></p>
+    <%= link_to 'Make an Appointment', new_appointment_path %> </a>
+  </div>
+</div>
