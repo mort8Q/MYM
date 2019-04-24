@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20190423135454) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-
   create_table "appointments", force: :cascade do |t|
     t.integer "user_id"
     t.string "location"
@@ -26,52 +25,6 @@ ActiveRecord::Schema.define(version: 20190423135454) do
     t.integer "service_id"
   end
 
-  create_table "services", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.decimal "duration"
-    t.string "location"
-    t.decimal "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "image"
-
-  create_table "carts", force: :cascade do |t|
-    t.string "cart_item_name", default: [], array: true
-    t.string "cart_item_description", default: [], array: true
-    t.text "quantity", default: [], null: false, array: true
-    t.text "item_id", default: [], null: false, array: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "status"
-  end
-
-  create_table "shops", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
-    t.string "description"
-    t.string "image"
-    t.integer "stock"
-    t.integer "price"
-  end
-
-# This file is auto-generated from the current state of the database. Instead
-# of editing this file, please use the migrations feature of Active Record to
-# incrementally modify your database, and then regenerate this schema definition.
-#
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
-#
-# It's strongly recommended that you check this file into your version control system.
-
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "cars", force: :cascade do |t|
     t.integer "user_id"
     t.string "car_type"
@@ -81,6 +34,16 @@ ActiveRecord::Schema.define(version: 20190423135454) do
     t.integer "car_odo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.string "cart_item_name", default: [], array: true
+    t.string "cart_item_description", default: [], array: true
+    t.text "quantity", default: [], null: false, array: true
+    t.text "item_id", default: [], null: false, array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
   end
 
   create_table "connected_devices", force: :cascade do |t|
@@ -115,18 +78,37 @@ ActiveRecord::Schema.define(version: 20190423135454) do
     t.string "speciality"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
 
+  create_table "services", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.decimal "duration"
+    t.string "location"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   create_table "shops", force: :cascade do |t|
-    t.string "index"
-    t.string "new"
-    t.string "edit"
-    t.string "show"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "description"
+    t.string "image"
+    t.integer "stock"
+    t.integer "price"
   end
 
+  create_table "troubleshooters", force: :cascade do |t|
+    t.string "issue_name"
+    t.string "issue_description"
+    t.string "fix_steps", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "fix_steps_titles", default: [], array: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -145,15 +127,6 @@ ActiveRecord::Schema.define(version: 20190423135454) do
     t.string "user_type"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-
-  create_table "troubleshooters", force: :cascade do |t|
-    t.string "issue_name"
-    t.string "issue_description"
-    t.string "fix_steps", default: [], array: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "fix_steps_titles", default: [], array: true
-
   end
 
 end

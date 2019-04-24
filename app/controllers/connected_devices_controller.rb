@@ -1,4 +1,6 @@
 class ConnectedDevicesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @devices = ConnectedDevice.all
     @acceleration = [ConnectedDevice.where(user_id: 1).group(:trip_id_a).average(:x_value_a),
