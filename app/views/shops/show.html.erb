@@ -13,18 +13,7 @@
                     <div class="form-group">
                     
         <label for="sel1">Select item quantity :</label>
-            <select class="form-control" id="sel1" style="width 10px" >
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-            </select>
+            <%= select_tag "quantity", options_for_select((1..10).to_a,1) %>
             </div>
                 <div>
                 <h5>Price :</h5> <%= @shop.price%> SR
@@ -33,7 +22,8 @@
                 <h5>Description:</h5>  <%= @shop.description %>
                 </div>
             <div>
-                    <button type="button" class="btn btn-success">Add to Cart </button>
+                    
+                    <%= link_to 'Add to Cart', carts_path(@shop.id) %>  
             </div>
         </div>
     </div>

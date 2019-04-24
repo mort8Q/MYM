@@ -10,18 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190422222106) do
+ActiveRecord::Schema.define(version: 20190423135454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "carts", force: :cascade do |t|
-    t.string "cart_item_name"
-    t.string "cart_item_description"
-    t.integer "quantity"
-    t.integer "item_id"
+    t.string "cart_item_name", default: [], array: true
+    t.string "cart_item_description", default: [], array: true
+    t.text "quantity", default: [], null: false, array: true
+    t.text "item_id", default: [], null: false, array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
   end
 
   create_table "shops", force: :cascade do |t|

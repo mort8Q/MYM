@@ -19,3 +19,6 @@ Shop.create(name:"WINDOW REGULATOR", description:"Window lifter is a mechanism f
 Shop.create(name:"ENGINE THERMOSTAT", description:"Thermostat is a device that is used in liquid cooling systems in all existing automotive engines. Thermostat is located between the radiator and the car engine. It serves to maintain the necessary stable operating temperature of the engine. ",image:"https://cdn.pkwteile.de/thumb/assets/ersatz_categories/200x200/37.jpg",stock:90 , price:180)
 Shop.create(name:"WATER PUMP", description:"An auxiliary water pump is designed to improve cooling system efficiency. It contributes to creation of comfortable microclimate in a car passenger compartment when an engine runs at low rpm, for example, in traffic jams",image:"https://cdn.pkwteile.de/thumb/assets/ersatz_categories/200x200/313.jpg",stock:120 , price:94)
 
+# Cart.destroy_all
+# Cart.creat()
+# Cart.update()

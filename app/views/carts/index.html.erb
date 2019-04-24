@@ -1,3 +1,25 @@
-<h1>Shopping Cart</h1>
+    <h1>Shopping Cart</h1>
+    <%= link_to 'Continue Shopping', shops_path %>
+    <% if $orders.blank?  %>
+    <p>you have no items in your cart</p>
+    <% else %>
+    <li>
+    <% totalPrice = 0 %>
+    <div class="cards" >
+    <% $orders.each do |o| %>
+        <div >
+        <div >
+        <p class="item_name"><%= o.name %></p>
+        <p >Price: <span class="product_p_q" id="totalPrice"> <%= o.price %></span></p>
+        </div>
+        </div>
 
-
+        <p><% totalPrice+=o.price %></p>
+        
+    <% end %>
+    <p id="totalprice">Total Price: <%= totalPrice %> SR</p>
+    </li>
+    
+<%= link_to 'Remove all items', '/carts/del' %>
+<%= link_to 'Go To Checkout', new_cart_path %>
+<% end %>
