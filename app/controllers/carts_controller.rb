@@ -1,12 +1,14 @@
 class CartsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   $orders =[]
-
 
   def index
     if params[:format] == nil
       redirect_to shops_path
     else
     @shop = Shop.find(params[:format])
+    if $orders.include? @shop
+    else
     $orders.push(@shop)
     @carts = Cart.all
     name=[]
@@ -20,6 +22,7 @@ class CartsController < ApplicationController
     price.push(@shop.price)
     quantity.push(params[:quantity])
     end
+    end
     
 
     
@@ -27,6 +30,8 @@ class CartsController < ApplicationController
 
   def new
     @cart = Cart.new
+    @order_count = $orders.length
+    @cart_orders = @orders
   end
 
   def create

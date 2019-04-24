@@ -26,10 +26,10 @@ Service.create(name: "Cleaning", description:"nn", duration: 30 , price: 10 , im
 
 
 Shop.destroy_all
-Shop.create(name:"BRAKE MASTER CYLINDER", description:"Master brake cylinder is the central element of the braking system, which converts the force applied to the brake pedal into the hydraulic pressure throughout the system.",image:"https://cdn.pkwteile.de/thumb/assets/ersatz_categories/200x250/104.jpg",stock:20 , price:349)
-Shop.create(name:"BRAKE PADS", description:"Drum brake is one of the types of braking system, which consists of a rotating drum and braking is achieved by pressing the brake shoes to the drum. Brake pads consist of metallic components that are moon-shaped, to surface of which the shoes, made on the basis of the asbestos, are attached. On one of the pads there is placed a parking brake lever.",image:"https://cdn.pkwteile.de/thumb/assets/ersatz_categories/200x250/19.jpg",stock:60 , price:150)
+Shop.create(name:"BRAKE MASTER CYLINDER", description:"Master brake cylinder is the central element of the braking system, which converts the force applied to the brake pedal into the hydraulic pressure throughout the system.",image:"https://cdn.pkwteile.de/uploads/360_photos/8150366/preview.jpg",stock:20 , price:349)
+Shop.create(name:"BRAKE PADS", description:"Drum brake is one of the types of braking system, which consists of a rotating drum and braking is achieved by pressing the brake shoes to the drum. Brake pads consist of metallic components that are moon-shaped, to surface of which the shoes, made on the basis of the asbestos, are attached. On one of the pads there is placed a parking brake lever.",image:"https://ae01.alicdn.com/kf/HTB1KjqVJFXXXXcmXVXXq6xXFXXX6/Motorcycle-Brake-Pads-For-Honda-NSR-150-RR-NSR150-NSR150RR-Malaysian-market-Front-Rear-Brake-disk.jpg_640x640.jpg",stock:60 , price:150)
 Shop.create(name:"HELLA Sensor, oil temperature", description:"Oil temperature sensor is a very important smart part of modern cars. It serves to show the exact oil level in the car. As a rule it is placed at the rear part of the oil pan or oil crankcase. Since oil temperature of the operating engine usually differs from the coolant temperature and depends on many factors, you need a temperature sensor to measure it.",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb8ADU7Fp_DrTAsPoXgdevqatk7Olhf6xcIy2sBP9UXv1IKbpu",stock:130 , price:60)
-Shop.create(name:"FUEL TANK", description:"Fuel tank is a container for keeping fuel in cars with internal-combustion engine. As automaker permanently needs gas, petrol or diesel fuel there is necessity in a built-in tank. Fuel tank is made from plastic, steel or aluminium. Many automakers use plastic as it is possible to make plastic tank of different forms. As fuel tank must correspond to the car design, plastic has a great advantage over other materials. Moreover, plastic doesn’t rust.",image:"https://cdn.autoteiledirekt.de/thumb/assets/direkt/ersatz_categories/200x250/148.jpg",stock:75 , price:890)
+Shop.create(name:"FUEL TANK", description:"Fuel tank is a container for keeping fuel in cars with internal-combustion engine. As automaker permanently needs gas, petrol or diesel fuel there is necessity in a built-in tank. Fuel tank is made from plastic, steel or aluminium. Many automakers use plastic as it is possible to make plastic tank of different forms. As fuel tank must correspond to the car design, plastic has a great advantage over other materials. Moreover, plastic doesn’t rust.",image:"https://cdn.pkwteile.de/thumb?id=7173997&lng=en&n=0&ccf=21876011",stock:75 , price:890)
 Shop.create(name:"RADIATOR FAN (AIR CONDITIONER FAN)", description:"Being an environmental component, engine coolant system fan is installed to speed the passage of air through the radiator core system. This provides a better heat removal from the engine coolant to the environment. System operation is essential when idling or driving at a slow speed. In these cases, the rate of air flow is not sufficient to cool the motor vehicle in full measure..",image:"https://cdn.pkwteile.de/thumb/assets/ersatz_categories/200x200/136.jpg",stock:57 , price:226)
 Shop.create(name:"FREEWHEEL CLUTCH ALTERNATOR ", description:"Alternator clutch pulley is designed for adjusting for rotating torque variations, transmitted from the crankshaft to the alternator shaft. Its sleeves become uncoupled in the moments when the drive shaft slows down, allowing the driven shaft to rotate independently. As the crankshaft speeds up, engagement occurs and the clutch pulley transmits the rotating torque to the alternator shaft. This allows to avoid jerks and belt slipping, thus significantly prolonging its lifetime.",image:"https://cdn.pkwteile.de/thumb/assets/ersatz_categories/200x200/299.jpg",stock:120 , price:99)
 Shop.create(name:"WINDOW SWITCH", description:"Window winder button activates a mechanism which automatically opens and closes a side window. The button unit may be mounted on the driver’s door only, or near each passenger seat as well.",image:"https://cdn.pkwteile.de/thumb/assets/ersatz_categories/200x200/325.jpg",stock:76 , price:48)
@@ -48,33 +48,33 @@ Troubleshooter.create(
     issue_name: "battery", 
     issue_description: "battery dead",
     fix_steps: ["From commuting to work to dropping off 
-                 the kids at school, you rely on your 
-                 vehicle every day to get around town. 
-                 Your car relies on its battery to help 
-                 power it down the road, so nothing can 
-                 ruin your day quite like a dead car 
-                 battery. If your car repeatedly doesn’t 
-                 start, it’s time to get to the bottom of 
-                 the issue rather than calling the tow 
-                 truck again for a jump. You might be 
-                 tempted to run out and buy a new battery, 
-                 but are you sure that the battery is the 
-                 problem? There are many reasons that you 
-                 can experience battery failure besides a 
-                 bad battery. Here are some steps you can 
-                 take to troubleshoot your car battery 
-                 problems.", 
-                 "From headlights to dome lights, your 
-                 car has a variety of lights. If any are 
-                 mistakenly left on, it can cause your 
-                 battery to die. Something as simple as 
-                 a door not being completely shut could 
-                 trigger a light to stay on all night, 
-                 draining your battery. After parking your 
-                 vehicle, make sure all of the lights turn 
-                 off. Some lights are designed to stay on 
-                 for a few seconds after exiting or turning 
-                 off the vehicle, so be patient.", 
+                the kids at school, you rely on your 
+                vehicle every day to get around town. 
+                Your car relies on its battery to help 
+                power it down the road, so nothing can 
+                ruin your day quite like a dead car 
+                battery. If your car repeatedly doesn’t 
+                start, it’s time to get to the bottom of 
+                the issue rather than calling the tow 
+                truck again for a jump. You might be 
+                tempted to run out and buy a new battery, 
+                but are you sure that the battery is the 
+                problem? There are many reasons that you 
+                can experience battery failure besides a 
+                bad battery. Here are some steps you can 
+                take to troubleshoot your car battery 
+                problems.", 
+                "From headlights to dome lights, your 
+                car has a variety of lights. If any are 
+                mistakenly left on, it can cause your 
+                battery to die. Something as simple as 
+                a door not being completely shut could 
+                trigger a light to stay on all night, 
+                draining your battery. After parking your 
+                vehicle, make sure all of the lights turn 
+                off. Some lights are designed to stay on 
+                for a few seconds after exiting or turning 
+                off the vehicle, so be patient.", 
                 "Corroded or loose battery connections can 
                 cause your battery to fail. Check the 
                 battery, looking closely at the battery 
@@ -128,9 +128,9 @@ Troubleshooter.create(
                 if you need to keep looking if your 
                 starting problems persist."],
     fix_steps_titles: ["Keep the power going",
-                       "Check your lights",
-                       "Inspect battery connections",
-                       "Look for parasitic drain",
-                       "Examine water level",
-                       "Test the voltage"]
-    )
+                        "Check your lights",
+                        "Inspect battery connections",
+                        "Look for parasitic drain",
+                        "Examine water level",
+                        "Test the voltage"]
+        )

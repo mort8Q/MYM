@@ -1,16 +1,16 @@
-<h1>Shops</h1>
     <div class="container">
-        <div class="card-columns">
-            <% @shops.each do |item| %>
-                <div class="card " style="width: 18rem;height: 22rem;"">
-                    <img class="pic" src="<%= item.image %>" alt="">
-                        <div class="card-body">
-                            <p class="card-title"><%= item.name %></p>
-                                <div class="link">
-                                <%= link_to 'View Details>>', shop_path(item) %>
-                                </div>
-                        </div>
-                </div>
-            <% end %>
-        </div>
+        <h1>Shops</h1>
+            <div class="card-columns">
+                <% @shops.each do |item| %>
+                    <div class="card " style="width: 18rem;height: 20rem;">
+                        <img class="pic" src="<%= item.image %>" style="width:200px; height:200px"alt="">
+                            <div class="card-body">
+                                <p class="card-title"><strong><%= item.name %></strong></p>
+                                    <div class="link">
+                                    <%= link_to '<button type="button" class="btn btn-outline-warning">View Details</button>'.html_safe, shop_path(item) %>
+                                    </div>
+                            </div>
+                    </div>
+                <% end %>
+            </div>
     </div>

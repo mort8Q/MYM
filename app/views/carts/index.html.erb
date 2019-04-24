@@ -1,25 +1,60 @@
+<div class="container">
     <h1>Shopping Cart</h1>
-    <%= link_to 'Continue Shopping', shops_path %>
-    <% if $orders.blank?  %>
-    <p>you have no items in your cart</p>
-    <% else %>
-    <li>
-    <% totalPrice = 0 %>
-    <div class="cards" >
-    <% $orders.each do |o| %>
-        <div >
-        <div >
-        <p class="item_name"><%= o.name %></p>
-        <p >Price: <span class="product_p_q" id="totalPrice"> <%= o.price %></span></p>
-        </div>
-        </div>
+    <div>
+    <%= link_to '<button type="button" class="btn btn-outline-warning">Continue Shopping</button>'.html_safe, shops_path %>
+	<table id="cart" class="table table-hover table-condensed"></div>
+    			<thead>
+						<tr>
+							<th style="width:50%">Product</th>
+							<th style="width:10%">Price</th>
+							<th style="width:8%">Quantity</th>
+							<th style="width:22%" class="text-center">Subtotal</th>
+							<th style="width:10%"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+                            <% if $orders.blank?  %>
+                                <p>you have no items in your cart</p>
+                                <% else %>
+                                
+                                <% totalPrice = 0 %>
+                                <div class="cards" >
+                                <% $orders.each do |o| %>
+							<td data-th="Product">
+								<div class="row">
+									<div class="col-sm-1 ">
+                                    <img src="<%= o.image %>" alt="..." class="img-responsive"/></div>
+									<div class="col-sm-10">
+										<p  class="item_name"><%= o.name %></p>
+										
+									</div>
+								</div>
+							</td>
+							<td data-th="Price"> <%= o.price %></td>
+							<td data-th="Quantity">
+								<input type="number" class="form-control text-center" value="1">
+							</td>
+							<td data-th="Subtotal" class="text-center"><%= o.price %></td>
+                                <p><% totalPrice+=o.price %></p>
+						</tr>
+					</tbody>
+                    <% end %>
+					<tfoot>
+						<tr class="visible-xs">
+							
+						</tr>
+                        
+						<tr>
+							<td><%= link_to '<button type="button" class="btn btn-outline-warning">Remove all items</button>'.html_safe, '/carts/del' %></td>
+							<td colspan="2" class="hidden-xs"></td>
+							<td class="hidden-xs text-center"><strong>Total Price: <%= totalPrice %> SR</strong></td>
+							<td><%= link_to '<button type="button" class="btn btn-outline-warning">Checkout</button>'.html_safe, new_cart_path %></td>
+						</tr>
+					</tfoot>
+                
+				</table>
+            
+</div>
 
-        <p><% totalPrice+=o.price %></p>
-        
-    <% end %>
-    <p id="totalprice">Total Price: <%= totalPrice %> SR</p>
-    </li>
-    
-<%= link_to 'Remove all items', '/carts/del' %>
-<%= link_to 'Go To Checkout', new_cart_path %>
 <% end %>

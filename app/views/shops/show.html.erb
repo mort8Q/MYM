@@ -1,4 +1,4 @@
-<h1>Shops</h1>
+
     <div class="card mb-2 m-3">
         <div class="row no-gutters">
             <div class="col-md-5">
@@ -22,8 +22,8 @@
                 <h5>Description:</h5>  <%= @shop.description %>
                 </div>
             <div>
+                    <%= link_to '<button type="button" class="btn btn-outline-warning">Add to Cart</button>'.html_safe, carts_path(@shop.id) %>
                     
-                    <%= link_to 'Add to Cart', carts_path(@shop.id) %>  
             </div>
         </div>
     </div>
