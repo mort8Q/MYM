@@ -1,0 +1,2 @@
+class Troubleshooter < ApplicationRecord
+end

@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 Shop.destroy_all
 Shop.create(name:"BRAKE MASTER CYLINDER", description:"Master brake cylinder is the central element of the braking system, which converts the force applied to the brake pedal into the hydraulic pressure throughout the system.",image:"https://cdn.pkwteile.de/thumb/assets/ersatz_categories/200x250/104.jpg",stock:20 , price:349)
 Shop.create(name:"BRAKE PADS", description:"Drum brake is one of the types of braking system, which consists of a rotating drum and braking is achieved by pressing the brake shoes to the drum. Brake pads consist of metallic components that are moon-shaped, to surface of which the shoes, made on the basis of the asbestos, are attached. On one of the pads there is placed a parking brake lever.",image:"https://cdn.pkwteile.de/thumb/assets/ersatz_categories/200x250/19.jpg",stock:60 , price:150)
@@ -19,6 +20,98 @@ Shop.create(name:"WINDOW REGULATOR", description:"Window lifter is a mechanism f
 Shop.create(name:"ENGINE THERMOSTAT", description:"Thermostat is a device that is used in liquid cooling systems in all existing automotive engines. Thermostat is located between the radiator and the car engine. It serves to maintain the necessary stable operating temperature of the engine. ",image:"https://cdn.pkwteile.de/thumb/assets/ersatz_categories/200x200/37.jpg",stock:90 , price:180)
 Shop.create(name:"WATER PUMP", description:"An auxiliary water pump is designed to improve cooling system efficiency. It contributes to creation of comfortable microclimate in a car passenger compartment when an engine runs at low rpm, for example, in traffic jams",image:"https://cdn.pkwteile.de/thumb/assets/ersatz_categories/200x200/313.jpg",stock:120 , price:94)
 
-# Cart.destroy_all
-# Cart.creat()
-# Cart.update()
+
+Troubleshooter.destroy_all
+Car.destroy_all
+
+Car.create(user_id: 1, car_type: "Sports", car_brand: "Ferrari", car_model: "FXXK", car_year: 2017, car_odo: 11900)
+Troubleshooter.create(
+    issue_name: "battery", 
+    issue_description: "battery dead",
+    fix_steps: ["From commuting to work to dropping off 
+                 the kids at school, you rely on your 
+                 vehicle every day to get around town. 
+                 Your car relies on its battery to help 
+                 power it down the road, so nothing can 
+                 ruin your day quite like a dead car 
+                 battery. If your car repeatedly doesn’t 
+                 start, it’s time to get to the bottom of 
+                 the issue rather than calling the tow 
+                 truck again for a jump. You might be 
+                 tempted to run out and buy a new battery, 
+                 but are you sure that the battery is the 
+                 problem? There are many reasons that you 
+                 can experience battery failure besides a 
+                 bad battery. Here are some steps you can 
+                 take to troubleshoot your car battery 
+                 problems.", 
+                 "From headlights to dome lights, your 
+                 car has a variety of lights. If any are 
+                 mistakenly left on, it can cause your 
+                 battery to die. Something as simple as 
+                 a door not being completely shut could 
+                 trigger a light to stay on all night, 
+                 draining your battery. After parking your 
+                 vehicle, make sure all of the lights turn 
+                 off. Some lights are designed to stay on 
+                 for a few seconds after exiting or turning 
+                 off the vehicle, so be patient.", 
+                "Corroded or loose battery connections can 
+                cause your battery to fail. Check the 
+                battery, looking closely at the battery 
+                terminals, cables and connectors. 
+                First, make sure the cables are securely 
+                connected. If you discover loose cables, 
+                you likely have found the source of your 
+                problem. Next, look for corrosion that 
+                can appear as white, green or blue blooms. 
+                If there is corrosion, it can prevent the 
+                starter from drawing energy from the 
+                battery. You can clean corrosion from the 
+                cables and connectors with a mixture of 
+                baking soda and water. Use a wire brush to 
+                clean the corrosion.",
+                "Between factory-installed systems to 
+                external gadgets you plug in, you demand 
+                a lot of energy from your battery. If one 
+                of these systems or devices doesn’t shut 
+                down properly, it can drain your battery 
+                overnight.Start by unplugging external 
+                devices like GPS units and cellphone 
+                chargers to see if that is the source of 
+                the problem. Another culprit could be a 
+                glovebox or trunk light that is staying 
+                lit. Feel the bulb to see if it’s hot. 
+                Non-factory stereos and car alarms can 
+                also contribute to battery drain. If you 
+                are still having problems, your mechanic 
+                can trace the source of parasitic drain.",
+                "If you have a conventional unsealed lead 
+                acid battery, check the acid level. Low 
+                water level can reduce the battery’s power, 
+                which can result in failure. Fill the battery 
+                with distilled water if necessary. Use caution 
+                when removing and replacing the caps.", 
+                "To get a good sense if your battery is 
+                the cause of your issues, test the voltage 
+                using a multimeter. Put the black 
+                multimeter lead on the negative battery 
+                cable and the red lead on the positive 
+                cable. If the reading is 12.45 volts or 
+                greater, your battery has a good charge. 
+                If your battery is low, don’t throw in the 
+                towel just yet. Fully charge the battery 
+                and have a load test done to determine if 
+                it will hold a charge. Many mechanics and 
+                auto parts stores will test your battery 
+                for free. The results of this test will 
+                tell you if you need a new battery or 
+                if you need to keep looking if your 
+                starting problems persist."],
+    fix_steps_titles: ["Keep the power going",
+                       "Check your lights",
+                       "Inspect battery connections",
+                       "Look for parasitic drain",
+                       "Examine water level",
+                       "Test the voltage"]
+    )

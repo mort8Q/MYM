@@ -1,0 +1,2 @@
+class ConnectedDevice < ApplicationRecord
+end

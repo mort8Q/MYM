@@ -1,0 +1,2 @@
+module ConnectedDevicesHelper
+end
