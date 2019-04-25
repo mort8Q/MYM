@@ -6,6 +6,7 @@
     			<thead>
 						<tr>
 							<th style="width:50%">Product</th>
+                            <th style="width:50%">Item Name</th>
 							<th style="width:10%">Price</th>
 							<th style="width:8%">Quantity</th>
 							<th style="width:22%" class="text-center">Subtotal</th>
@@ -23,14 +24,13 @@
                                 <% $orders.each do |o| %>
 							<td data-th="Product">
 								<div class="row">
-									<div class="col-sm-1 ">
-                                    <img src="<%= o.image %>" alt="..." class="img-responsive"/></div>
-									<div class="col-sm-10">
-										<p  class="item_name"><%= o.name %></p>
-										
-									</div>
+									<div class="col-sm-4 ">
+                                    <img src="<%= o.image %>" width=250; height=250 alt="..." class="img-responsive"  /></div>
+							
 								</div>
 							</td>
+                            <td><strong  class="item_name"><%= o.name %></strong>
+										</td>
 							<td data-th="Price"> <%= o.price %></td>
 							<td data-th="Quantity">
 								<input type="number" class="form-control text-center" value="1">
@@ -46,11 +46,12 @@
 						</tr>
                         
 						<tr>
-							<td><%= link_to '<button type="button" class="btn btn-outline-warning">Remove all items</button>'.html_safe, '/carts/del' %></td>
+                            <td><%= link_to "Remove all items", '/carts/del' , class:"btn btn-outline-warning px-5"%><br>
+							</td>
 							<td colspan="2" class="hidden-xs"></td>
 							<td class="hidden-xs text-center"><strong>Total Price: <%= totalPrice %> SR</strong></td>
-							<td><%= link_to '<button type="button" class="btn btn-outline-warning">Checkout</button>'.html_safe, new_cart_path %></td>
-						</tr>
+							<td><%= link_to "Checkout", new_cart_path , class:"btn btn-outline-warning px-5"%><br>
+                            </tr>
 					</tfoot>
                 
 				</table>

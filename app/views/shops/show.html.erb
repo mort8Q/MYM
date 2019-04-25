@@ -1,8 +1,8 @@
-
+<div class="container">
     <div class="card mb-2 m-3">
         <div class="row no-gutters">
             <div class="col-md-5">
-                <img class="card-image-top" src="<%= @shop.image %>" alt="" style="width:250px ; height: 300px">
+                <img class="card-image-top" src="<%= @shop.image %>" alt="" style="width:250px ; height: 250px">
             </div>
             <div class="col-md-7">
                 <div class="card-body">
@@ -12,11 +12,11 @@
                     <%= @shop.name %>
                     <div class="form-group">
                     
-        <label for="sel1">Select item quantity :</label>
+        <h5>Select item quantity :</h5>
             <%= select_tag "quantity", options_for_select((1..10).to_a,1) %>
             </div>
                 <div>
-                <h5>Price :</h5> <%= @shop.price%> SR
+                <h5>Price :</h5> <%= @shop.price%> SAR
                 </div>
                 <div>
                 <h5>Description:</h5>  <%= @shop.description %>
@@ -27,5 +27,5 @@
             </div>
         </div>
     </div>
-
+</div>
 
