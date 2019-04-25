@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index,:new, :create, :edit, :update, :destroy, :empty]
+
   $orders =[]
 
   def index
