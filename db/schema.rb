@@ -70,16 +70,6 @@ ActiveRecord::Schema.define(version: 20190423135454) do
     t.integer "user_id"
   end
 
-  create_table "service_providers", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.integer "cellphone"
-    t.string "image"
-    t.string "speciality"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "services", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -130,3 +120,4 @@ ActiveRecord::Schema.define(version: 20190423135454) do
   end
 
 end
+
