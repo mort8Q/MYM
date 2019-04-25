@@ -1,13 +1,48 @@
+<body class="bg-light">
+<div class="container">
+<div class="py-5 text-center">
+ <img class="d-block mx-auto mb-4" src="https://image.flaticon.com/icons/svg/1643/1643625.svg" alt=""
+        width="72" height="72">
+<h2>show Appointment</h2>
+</div>
 
-<h1>show Appointment</h1>
+<table class="table">
+  <thead class="thead-dark">
+ 
+<tr>
 
-<strong>Service Name: </strong><%= @appointment.service.name %><br/>
-<strong>Service Description:</strong> <%= @appointment.service.description %><br/>
-<strong>Service Duration: </strong><%= @appointment.service.duration %><br/>
-<strong>Service Price:</strong> <%= @appointment.service.price %><br/>
-<strong>Date:</strong> <%= @appointment.date%><br/>
-<strong>Time:</strong> <%= @appointment.time %><br/>
-<strong>Location:</strong> <%= @appointment.location %><br/>
+<th scope=“col”>Service Name</th>
+<th scope=“col”>Service Description</th>
+<th scope=“col”>Service Duration </th>
+<th scope=“col”>Service Price </th>
+<th scope=“col”>Date </th>
+<th scope=“col”>Time </th>
+<th scope=“col”>Location </th>
+</tr>
+</thead>
 
+<tr>
+<td scope="col"><%= @appointment.service.name %></td>
+<td scope="col"><%= @appointment.service.description %></td>
+<td scope="col"><%= @appointment.service.duration %> min</td>
+<td scope="col"><%= @appointment.service.price %> SR</td>
+<td scope="col"><%= @appointment.date %></td>
+<td scope="col"><%= @appointment.time.to_s.split(" ")[1] %></td>
+<td scope="col"><%= @appointment.location %></td>
 
-<%= link_to 'All appointment', appointments_path %>
+</tr>
+
+</table>
+<hr>
+<%= link_to 'All appointment', appointments_path, class:"btn btn-outline-warning" %>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+       <p class="mb-1">&copy; 2018-2019 MPM</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+</body>

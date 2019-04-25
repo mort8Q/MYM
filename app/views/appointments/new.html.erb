@@ -1,5 +1,22 @@
-<h1>New Appointment</h1>
+<body class="bg-light">
+<div class="container">
+<div class="py-5 text-center">
+ <img class="d-block mx-auto mb-4" src="https://image.flaticon.com/icons/svg/1643/1643625.svg" alt=""
+        width="72" height="72">
+<h2>New Appointment</h2>
+</div>
 
 <%= render partial: 'form' %>
-
-<%= link_to "All Appointment", appointments_path %>
+<center>
+<%= link_to "Back", appointments_path %>
+</center>
+<footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2018-2019 MPM</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+</body>

@@ -1,26 +1,59 @@
+  <%= form_for @appointment do |form| %>
 
-<%= form_for @appointment do |form| %>
 
-<div class="field">
-  Services: <%= form.collection_select(:service_id, Service.all, :id, :name) %>
+<div class="card bg-light" style="width: 30rem;margin:0 auto;">
+<div class="container" >
+<div class="row">
+<div class="col-md-12">
+<div class="card-body">
+<div class="form-group row">
+    <label><strong>Choose Services</strong></label><br/>
+    <div class="field">
+    <%= form.collection_select(:service_id, Service.all, :id, :name) %>
+  </div>
+  
+  </div>
+
+
+
+
+
+<div class="form-group row">
+  <label><strong>Enter Date</strong></label>
+
+  <div class="field">
+    <%= form.date_field :date %>
+  </div>
+
+  </div>
+
+
+<div class="form-group row">
+  <div class="field">
+  <label><strong>Enter Time</strong></label><br/>    
+  <%= form.time_field :time %>
+  </div>
 </div>
 
-<div class="field">
-  Date: 
-   <%= form.date_field :date %>
-</div>
 
-
-<div class="field">
-  Time:
-   <%= form.time_field :time %>
-</div>
-
-<div class="field">
-  Location:
+<div class="form-group row">
+  <div class="field">
+  <label><strong>Enter Location</strong> </label><br/>   
    <%= form.text_field :location %>
+  </div>
+<div>
+
 </div>
+  </div>
+  </div>
+  </div>
+ </div>
 
-  <%= submit_tag("Submit") %>
+  <center>
+    <%= submit_tag("Submit", :class => "btn btn-outline-warning" )%>
+</center>
 
-<% end %>
+  <% end %>
+ 
+</div>
+    </div>
